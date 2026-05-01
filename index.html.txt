@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dharvi’s Special Day 🎂💅</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ffd6e0, #ffe9f3);
+  overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-110vh); }
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  margin-top: 30px;
+  color: #ff4d88;
+  font-size: 2.8rem;
+}
+
+.box {
+  margin: 20px auto;
+  padding: 25px;
+  width: 80%;
+  max-width: 500px;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 16px;
+  background: linear-gradient(45deg, #ff4d88, #ff80aa);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#surprise {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Sparkle */
+.sparkle {
+  position: fixed;
+  font-size: 14px;
+  animation: sparkle 2s linear infinite;
+}
+
+@keyframes sparkle {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happiieee Birthdayyy Dharviiii 🎂💖</h1>
+
+<div class="box">
+  <p>Not me making a whole aesthetic website for you 😤✨</p>
+  <p>Thoda sa scroll kar na… surprise wait kar raha hai 🥺👇</p>
+</div>
+
+<div class="box">
+  <h2>Official Birthday Wish 🎀</h2>
+  <p>
+    Happiest birthday to the prettiest, sweetest, and already iconic person 💖<br><br>
+    Even though you're new, you've already passed the vibe check 😌✨<br><br>
+    I hope this year gives you happiness, zero drama, and main character moments 💅
+  </p>
+</div>
+
+<div class="box">
+  <h2>Reasons you're iconic ✨</h2>
+  <p>
+    Your vibe = 10/10 💖<br>
+    Genuinely sweet 🫶<br>
+    Survived our class 😭👏<br>
+    Main character energy 🎬
+  </p>
+</div>
+
+<div class="box">
+  <h2>What you deserve 💅</h2>
+  <p>
+    Unlimited happiness 💖<br>
+    Good friends (including me obviously 😌)<br>
+    No stress 😭 (especially exams pls)<br>
+    Only good things ✨
+  </p>
+</div>
+
+<button onclick="showSurprise()">Click for surprise 🎁</button>
+
+<p id="surprise"></p>
+
+<script>
+// Surprise + Confetti
+function showSurprise() {
+  document.getElementById("surprise").innerHTML =
+  "SURPRISEEE 🎉💖<br><br>I may not know everything about you yet but I’m really glad you came into our class 🫶<br><br>And I just know that we’re gonna have the best memories 😤✨<br><br>Happiieee Birthdayyy once again Dharviii 💕🎂";
+
+  for (let i = 0; i < 100; i++) {
+    let confetti = document.createElement("div");
+    confetti.innerHTML = "🎉";
+    confetti.style.position = "fixed";
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.top = "-20px";
+    confetti.style.fontSize = "20px";
+    document.body.appendChild(confetti);
+
+    let fall = setInterval(() => {
+      confetti.style.top = (parseInt(confetti.style.top) + 6) + "px";
+      if (parseInt(confetti.style.top) > window.innerHeight) {
+        clearInterval(fall);
+        confetti.remove();
+      }
+    }, 30);
+  }
+}
+
+// Floating hearts
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}, 500);
+
+// Sparkles
+setInterval(() => {
+  let sparkle = document.createElement("div");
+  sparkle.className = "sparkle";
+  sparkle.innerHTML = "✨";
+  sparkle.style.left = Math.random() * 100 + "vw";
+  sparkle.style.top = Math.random() * 100 + "vh";
+  document.body.appendChild(sparkle);
+
+  setTimeout(() => sparkle.remove(), 2000);
+}, 300);
+</script>
+
+</body>
+</html>
